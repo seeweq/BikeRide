@@ -6,14 +6,14 @@ public class FunRide {
 
 
     private final int maxBikes;
-    ArrayList<BicycleType> bikes = new ArrayList<>();
+    ArrayList<Bicycle> bikes = new ArrayList<>();
 
 
     public FunRide(int max){
         this.maxBikes = max;
     }
 
-    public void accept(BicycleType bicycle){
+    public void accept(Bicycle bicycle){
 
         if(bikes.size() >= maxBikes){
             System.out.println("The limit for bikes has been exceeded ");
@@ -21,19 +21,20 @@ public class FunRide {
             bikes.add(bicycle);
         }
         System.out.println(bikes.size() + " " + "has been added" );
+
     }
 
     public int getCountForType(BicycleType bikeType){
 
         int numberOfBikesInThisType = 0;
 
-       for( BicycleType type: bikes){
-            if(type == bikeType){
-                numberOfBikesInThisType += 1;
+       for(Bicycle bike: bikes){
+            if(bike.getBikeTypes() == bikeType){
+                numberOfBikesInThisType ++;
 
             }
        }
-        System.out.println(numberOfBikesInThisType + "" + " of " + bikeType + " type are in the Fun Ride");
+        System.out.println("There " + numberOfBikesInThisType + "" + " of " + bikeType + " type in the Fun Ride");
 
         return numberOfBikesInThisType;
     }

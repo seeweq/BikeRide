@@ -2,6 +2,7 @@ package bicycles.models;
 
 import bicycles.Bicycle;
 import bicycles.BicycleBase;
+import bicycles.BicycleType;
 
 public class MountainBike extends BicycleBase {
 
@@ -15,5 +16,11 @@ public class MountainBike extends BicycleBase {
 
     }
 
+    @Override
+    public BicycleType getBikeTypes() {
+
+        return BicycleType.MOUNTAINBIKE;
     }
+
+}
 

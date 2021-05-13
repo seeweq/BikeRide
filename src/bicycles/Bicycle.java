@@ -15,5 +15,5 @@ public interface Bicycle {
     //should reset speed to 0
     void stop();
 
-
+    BicycleType getBikeTypes();
 }
