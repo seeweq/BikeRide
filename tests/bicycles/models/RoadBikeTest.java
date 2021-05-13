@@ -1,58 +1,60 @@
-package bicycles;
+package bicycles.models;
 
 import bicycles.models.RoadBike;
-import bicycles.models.Tandem;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TandemTest {
+public class RoadBikeTest {
+
+    //check if speed increases by 11
+    //check accelerate method
     @Test
     public void shouldAccelerate() {
 
-        Tandem bicycle = new Tandem();
+        RoadBike bicycle = new RoadBike();
         bicycle.accelerate();
-        assertEquals(12, bicycle.currentSpeed());
+        assertEquals(11, bicycle.currentSpeed());
     }
     //check accelerate and brake method
     @Test
     public void shouldAccelerateAndBrakeCorrect() {
 
-        Tandem bicycle = new Tandem();
+        RoadBike bicycle = new RoadBike();
         bicycle.accelerate();
         bicycle.brake();
-        assertEquals(5, bicycle.currentSpeed());
+        assertEquals(7, bicycle.currentSpeed());
 
     }
     //check for multiple accelerates
     @Test
     public void shouldDoMultipleAcceleratesCorrectly() {
 
-        Tandem bicycle = new Tandem();
+        RoadBike bicycle = new RoadBike();
         bicycle.accelerate();
         bicycle.accelerate();
         bicycle.accelerate();
-        assertEquals(36, bicycle.currentSpeed());
+        assertEquals(33, bicycle.currentSpeed());
 
     }
     //check multiple accelerates and brakes
     @Test
     public void shouldDoMultipleAccelerateAndBrakesCorrectly() {
 
-        Tandem bicycle = new Tandem();
+        RoadBike bicycle = new RoadBike();
         bicycle.accelerate();
         bicycle.brake();
         bicycle.accelerate();
         bicycle.brake();
         bicycle.brake();
-        assertEquals(5, bicycle.currentSpeed());
+        assertEquals(10, bicycle.currentSpeed());
 
     }
     //check if it stops
     @Test
     public void shouldBeAbleToStop() {
 
-        Tandem bicycle = new Tandem();
+        RoadBike bicycle = new RoadBike();
         bicycle.accelerate();
         bicycle.brake();
         bicycle.accelerate();
@@ -60,4 +62,5 @@ public class TandemTest {
         assertEquals(0, bicycle.currentSpeed());
 
     }
-}
+    }
+

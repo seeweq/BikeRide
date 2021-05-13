@@ -1,6 +1,8 @@
-package bicycles;
+package bicycles.ride;
 
 import java.util.ArrayList;
+
+import bicycles.Bicycle;
 import bicycles.BicycleType;
 public class FunRide {
 

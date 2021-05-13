@@ -1,8 +1,8 @@
-package bicycles;
+package bicycles.ride;
 
-import bicycles.models.RoadBike;
 import bicycles.models.Tandem;
 import org.junit.jupiter.api.Test;
+import bicycles.ride.BikeRideThree;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

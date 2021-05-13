@@ -1,23 +1,23 @@
-package bicycles;
+package bicycles.ride;
 
-import bicycles.models.MountainBike;
-import bicycles.models.RoadBike;
 
-public class BikeRideTwo implements BikeRide{
+import bicycles.Bicycle;
+
+public class BikeRideThree implements BikeRide {
     public final Bicycle bicycle;
 
     //constructor
-    public BikeRideTwo(Bicycle bicycle) {
+    public BikeRideThree(Bicycle bicycle) {
         this.bicycle = bicycle;
     }
- 
+
     //ride method
     public void ride(Bicycle bicycle) {
         this.bicycle.accelerate();
         this.bicycle.accelerate();
         this.bicycle.accelerate();
         this.bicycle.accelerate();
-        this.bicycle.brake();
+        this.bicycle.accelerate();
         this.bicycle.brake();
         this.bicycle.brake();
         this.bicycle.accelerate();
