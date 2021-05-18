@@ -17,12 +17,13 @@ public class FunRide {
 
     public void accept(Bicycle bicycle){
 
-        if(bikes.size() >= maxBikes){
-            System.out.println("The limit for bikes has been exceeded ");
-        }else if(!bikes.contains(bicycle)){
+        if(bikes.size() < maxBikes && !bikes.contains(bicycle)){
+//            System.out.printf( );
             bikes.add(bicycle);
+            System.out.println(bikes.size() + " " + "has been added" );
+        }else {
+            System.out.println("The limit for bikes has been exceeded ");
         }
-        System.out.println(bikes.size() + " " + "has been added" );
 
     }
 
