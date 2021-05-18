@@ -21,5 +21,7 @@ public class BicycleSpecification {
         return brakeSpeed;
     }
 
-
+    public BicycleType getBicycleType() {
+        return bicycleType;
+    }
 }
