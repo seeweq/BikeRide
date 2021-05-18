@@ -18,16 +18,18 @@ public class FunRideTest {
         assertEquals(1,takeAFunRide.getEnteredCount() );
     }
 
+
     @Test
     public void checkHowManyBikesOfTypeTakingARide(){
         FunRide takeAFunRide = new FunRide(8);
         Bicycle roadBicycle = new RoadBike();
+        Bicycle roadBicycle1 = new RoadBike();
         Bicycle mountBicycle = new MountainBike();
-        takeAFunRide.accept(roadBicycle);
+        takeAFunRide.accept(roadBicycle1);
         takeAFunRide.accept(roadBicycle);
         takeAFunRide.accept(roadBicycle);
         takeAFunRide.accept(mountBicycle);
-        assertEquals(3,takeAFunRide.getCountForType(BicycleType.ROADBIKE) );
+        assertEquals(2,takeAFunRide.getCountForType(BicycleType.ROADBIKE) );
     }
 
     @Test

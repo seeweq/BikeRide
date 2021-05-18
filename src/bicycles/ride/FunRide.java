@@ -19,7 +19,7 @@ public class FunRide {
 
         if(bikes.size() >= maxBikes){
             System.out.println("The limit for bikes has been exceeded ");
-        }else {
+        }else if(!bikes.contains(bicycle)){
             bikes.add(bicycle);
         }
         System.out.println(bikes.size() + " " + "has been added" );
