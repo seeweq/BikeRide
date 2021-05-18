@@ -15,8 +15,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class FunRideTest {
     @Test
     public void checkForBikesTakingARide(){
+        BicycleSpecification roadBikeSpec = new BicycleSpecification(11, 4, BicycleType.ROADBIKE);
+        Bicycle roadBicycle= new BicycleFromSpec(roadBikeSpec);
         FunRide takeAFunRide = new FunRide(8);
-        Bicycle roadBicycle = new RoadBike();
         takeAFunRide.accept(roadBicycle);
         assertEquals(1,takeAFunRide.getEnteredCount() );
     }
@@ -33,28 +34,38 @@ public class FunRideTest {
     @Test
     public void checkHowManyBikesOfTypeTakingARide(){
         FunRide takeAFunRide = new FunRide(8);
-        Bicycle roadBicycle = new RoadBike();
-        Bicycle roadBicycle1 = new RoadBike();
-        Bicycle mountBicycle = new MountainBike();
+        BicycleSpecification roadBikeSpec = new BicycleSpecification(11, 4, BicycleType.ROADBIKE);
+        Bicycle roadBicycle = new BicycleFromSpec(roadBikeSpec);
+        Bicycle roadBicycle1 = new BicycleFromSpec(roadBikeSpec);
+        Bicycle roadBicycle01 = new BicycleFromSpec(roadBikeSpec);
+
+        BicycleSpecification mountainBikeSpec = new BicycleSpecification(5, 3,BicycleType.MOUNTAINBIKE);
+        Bicycle mountBicycle = new BicycleFromSpec(mountainBikeSpec);
+
         takeAFunRide.accept(roadBicycle1);
-        takeAFunRide.accept(roadBicycle);
+        takeAFunRide.accept(roadBicycle01);
         takeAFunRide.accept(roadBicycle);
         takeAFunRide.accept(mountBicycle);
-        assertEquals(2,takeAFunRide.getCountForType(BicycleType.ROADBIKE) );
+        assertEquals(3,takeAFunRide.getCountForType(BicycleType.ROADBIKE) );
     }
 
     @Test
     public void shouldNotAcceptIfBikesReachTheMaximum(){
         FunRide takeAFunRide = new FunRide(8);
-        Bicycle roadBicycle = new RoadBike();
-        Bicycle roadBicycle1 = new RoadBike();
-        Bicycle roadBicycle01 = new RoadBike();
-        Bicycle mountBicycle = new MountainBike();
-        Bicycle mountBicycle2 = new MountainBike();
-        Bicycle mountBicycle02 = new MountainBike();
-        Tandem tandem = new Tandem();
-        Tandem tandem3 = new Tandem();
-        Tandem tandem03 = new Tandem();
+        BicycleSpecification roadBikeSpec = new BicycleSpecification(11, 4, BicycleType.ROADBIKE);
+        Bicycle roadBicycle= new BicycleFromSpec(roadBikeSpec);
+        Bicycle roadBicycle1 = new BicycleFromSpec(roadBikeSpec);
+        Bicycle roadBicycle01 = new BicycleFromSpec(roadBikeSpec);
+
+        BicycleSpecification mountainBikeSpec = new BicycleSpecification(5, 3,BicycleType.MOUNTAINBIKE);
+        Bicycle mountBicycle = new BicycleFromSpec(mountainBikeSpec);
+        Bicycle mountBicycle2 = new BicycleFromSpec(mountainBikeSpec);
+        Bicycle mountBicycle02 = new BicycleFromSpec(mountainBikeSpec);
+
+        BicycleSpecification tandemSpec = new BicycleSpecification(12, 7,BicycleType.TANDEM);
+        Bicycle tandem = new BicycleFromSpec(tandemSpec);
+        Bicycle tandem3 = new BicycleFromSpec(tandemSpec);
+        Bicycle tandem03 = new BicycleFromSpec(tandemSpec);
         takeAFunRide.accept(roadBicycle);
         takeAFunRide.accept(roadBicycle1);
         takeAFunRide.accept(roadBicycle01);
